@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit</title>
+</head>
+<body>
+<form action="/todo_edit/{{h.id}}" method="post">{% csrf_token %}
+    <input type="text" name="nomi" value="{{h.nom}}">
+    <input type="date" name="vaqti" value="{{h.vaqt}}">
+    <input type="text" name="tarix" value="{{h.tarixi}}">
+     {% if todo.stats %}
+    <input type="checkbox" name="status" checked>
+    {% else %}
+    <input type="checkbox" name="status">
+    {% endif %}
+    <button type="submit">Edit</button>
+</form>
+</body>
+</html>
